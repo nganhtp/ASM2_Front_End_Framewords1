@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card border-light shadow">
+                    <div class="card-header bg-warning mb-3 ">
+                        <h4 class="text-white">Quản lý sản phẩm
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Tên sản phẩm</th>
+                                    <th scope="col">Hình ảnh</th>
+                                    <th scope="col">Giá</th>
+                                    <th scope="col">Giá khuyến mãi</th>
+                                    <th scope="col">Mô tả</th>
+                                    <th scope="col"></th>
+
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let item of data;let indx = index">
+                                <tr>
+                                    <th scope="row">{{indx + 1}}</th>
+                                    <td>{{item.TenSanPham}}</td>
+                                    <td> <img [src]="'assets/img/avatar/' + item.HinhAnh" alt="" width="100px"
+                                            height="100px"></td>
+                                    <td>{{item.Gia}}vnđ</td>
+                                    <td>{{item.GiaKhuyenMai}}vnđ</td>
+                                    <td>{{item.MoTa}}</td>
+                                    <td>
+                                        <button class="btn btn-warning btn-action mr-1" title="Edit"
+                                            routerLink="/pages/edit/{{item.MaSanPham}}"><i class="fas fa-pencil-alt"></i></button>
+                                        <br>
+                                        <button class="btn btn-warning btn-action" title="Delete"
+                                            (click)="deleteProduct(item.MaSanPham)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

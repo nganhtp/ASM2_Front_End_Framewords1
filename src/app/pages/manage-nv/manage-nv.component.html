@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-light shadow">
+      <div class="card-header bg-warning mb-3">
+        <h4 class="text-white">Quản lý nhân viên</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped" id="sortable-table">
+            <thead>
+              <tr>
+                <th class="text-center">
+                  <i class="fas fa-th"></i>
+                </th>
+                <th>Tên nhân viên</th>
+                <th>Hình ảnh</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th>Chức Vụ</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let employee of data">
+              <tr>
+                <td>
+                  <div class="text-center">
+                    <i class="fas fa-th"></i>
+                  </div>
+                </td>
+                <td>{{ employee.HoTen }}</td>
+
+                <td>
+                  <img [src]="'assets/img/avatar/' + employee.Anh" alt="" width="100px" height="100px" />
+                </td>
+                <td>{{ employee.Email }}</td>
+                <td>{{ employee.SDT }}</td>
+                <td>
+                  <div class="badge badge-success">{{ employee.ChucVu }}</div>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-success p-10" title="Add" routerLink="/pages/plus-nv/">
+                    thêm
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-warning" title="Edit"
+                    routerLink="/pages/edit-nv/{{ employee.MaNhanVien }}">
+                    Sửa
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-danger" title="Delete"
+                    (click)="deleteEmployee(employee.MaNhanVien)">
+                    xóa
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

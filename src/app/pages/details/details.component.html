@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card border-light shadow">
+                    <div class="card-header bg-secondary mb-3 ">
+                        <h4 class="text-white">Chi tiết sản phẩm</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-cols row-cols-md-1">
+
+                            <div class="col mb-12 p-2">
+                                <div class="card border-light shadow">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img [src]="'assets/img/avatar/'+ posts.HinhAnh" alt="..." width="250px"
+                                                height="250px">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{posts.TenSanPham}}</h5>
+                                                <div class="card-title mb-2" style="font-size: 20px;">Giá: {{posts.Gia}}vnđ</div>
+                                                <div class="card-title mb-2" style="font-size: 20px;">Giá khuyến mãi: {{posts.GiaKhuyenMai}}vnđ</div>
+                                                <div class="card-title mb-2" style="font-size: 20px;">Số lượng: {{posts.SoLuong}}</div>
+                                                <p class="card-text">Mô tả: {{posts.MoTa}}</p>
+                                                <p class="card-text"><small class="text-muted">Trạng thái: {{posts.TrangThai}}</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

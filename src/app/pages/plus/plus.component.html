@@ -1,0 +1,120 @@
+<div class="row">
+  <div class="col-12 col-md-12 col-lg-12">
+    <div class="card border-light shadow">
+      <form class="needs-validation" (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+        <div class="card-header bg-info mb-3">
+          <h4 class="text-white">Thêm sản phẩm</h4>
+        </div>
+        <div class="card-body">
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Tên sản phẩm:</label>
+            <div class="col-sm-9">
+              <input type="text" name="TenSanPham" formControlName="TenSanPham" [(ngModel)]="newProduct.TenSanPham"
+                class="form-control" required="Tên sản phẩm">
+                <span class="text-danger" 
+                *ngIf="formGroup['controls']['TenSanPham'].dirty && formGroup['controls']['TenSanPham'].errors">
+                <span *ngIf="formGroup['controls']['TenSanPham'].errors['required']">Tên sản phẩm không được bỏ
+                  trống!</span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Giá:</label>
+            <div class="col-sm-9">
+              <input type="number" name="Gia" formControlName="Gia" [(ngModel)]="newProduct.Gia" class="form-control" required="">
+              <span class="text-danger" 
+                *ngIf="formGroup['controls']['Gia'].dirty && formGroup['controls']['Gia'].errors">
+                <span *ngIf="formGroup['controls']['Gia'].errors['required']">Giá sản phẩm không được bỏ
+                  trống!</span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Giá khuyến mãi:</label>
+            <div class="col-sm-9">
+              <input type="number" name="GiaKhuyenMai" formControlName="GiaKhuyenMai" [(ngModel)]="newProduct.GiaKhuyenMai" class="form-control">
+              <span class="text-danger" 
+                *ngIf="formGroup['controls']['GiaKhuyenMai'].dirty && formGroup['controls']['GiaKhuyenMai'].errors">
+                <span *ngIf="formGroup['controls']['GiaKhuyenMai'].errors['required']">Giá khuyến mãi sản phẩm không được bỏ
+                  trống!</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Số lương:</label>
+            <div class="col-sm-9">
+              <input type="number" name="SoLuong" formControlName="SoLuong" [(ngModel)]="newProduct.SoLuong" class="form-control">
+              <span class="text-danger" 
+                *ngIf="formGroup['controls']['SoLuong'].dirty && formGroup['controls']['SoLuong'].errors">
+                <span *ngIf="formGroup['controls']['SoLuong'].errors['required']">Số lương sản phẩm không được bỏ
+                  trống!</span>
+              </span>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Danh mục:</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="MaDanhMuc" formControlName="MaDanhMuc" [(ngModel)]="newProduct.MaDanhMuc">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <span class="text-danger" 
+                *ngIf="formGroup['controls']['MaDanhMuc'].dirty && formGroup['controls']['MaDanhMuc'].errors">
+                <span *ngIf="formGroup['controls']['MaDanhMuc'].errors['required']">Tên sản phẩm không được bỏ
+                  trống!</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Hình ảnh:</label>
+            <div class="col-sm-9">
+              <input type="file" name="HinhAnh" formControlName="HinhAnh" [(ngModel)]="newProduct.HinhAnh" class="form-control">
+              <span class="text-danger" 
+                *ngIf="formGroup['controls']['HinhAnh'].dirty && formGroup['controls']['HinhAnh'].errors">
+                <span *ngIf="formGroup['controls']['HinhAnh'].errors['required']">Hình ảnh sản phẩm không được bỏ
+                  trống!</span>
+              </span>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Trạng thái:</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="TrangThai" formControlName="TrangThai" [(ngModel)]="newProduct.TrangThai">
+                <option>Đang hoạt động</option>
+                <option>Không hoạt động</option>
+              </select>
+              <span class="text-danger" 
+                *ngIf="formGroup['controls']['TrangThai'].dirty && formGroup['controls']['TrangThai'].errors">
+                <span *ngIf="formGroup['controls']['TrangThai'].errors['required']">Tên sản phẩm không được bỏ
+                  trống!</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group mb-0 row">
+            <label class="col-sm-3 col-form-label">Mô tả:</label>
+            <div class="col-sm-9">
+              <textarea class="form-control" name="MoTa" formControlName="MoTa" [(ngModel)]="newProduct.MoTa" ></textarea>
+              <span class="text-danger" 
+              *ngIf="formGroup['controls']['MoTa'].dirty && formGroup['controls']['MoTa'].errors">
+              <span *ngIf="formGroup['controls']['MoTa'].errors['required']">Tên sản phẩm không được bỏ
+                trống!</span>
+            </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer text-right">
+          <button type="submit" class="btn btn-outline-info" [disabled]="formGroup.invalid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

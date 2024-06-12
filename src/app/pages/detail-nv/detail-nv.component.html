@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card border-light shadow">
+                    <div class="card-header bg-secondary mb-3 ">
+                        <h4 class="text-white">Thông Tin Nhân Viên</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-cols row-cols-md-1">
+
+                            <div class="col mb-12 p-2">
+                                <div class="card border-light shadow">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img [src]="'assets/img/avatar/'+ datas.Anh" alt="..." width="250px"
+                                                height="250px">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{datas.HoTen}}</h5>
+                                                <div class="card-title mb-2" style="font-size: 20px;">chức vụ: {{datas.ChucVu}}</div>
+                                                <div class="card-title mb-2" style="font-size: 20px;">SDT: {{datas.SDT}}</div>
+                                                <div class="card-title mb-2" style="font-size: 20px;">Admin: {{datas.Admin}}</div>
+                                                <p class="card-text">Lý Lịch: {{datas.LyLich}}</p>
+                                                <p class="card-text"><small class="text-muted">Mã Nhân Viên: {{datas.MaNhanVien}}</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
